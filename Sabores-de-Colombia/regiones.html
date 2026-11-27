@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regiones y Sabores - Sabores de Colombia</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1 id="titulo-principal">Sabores de Colombia</h1>
+        <nav>
+            <a id="menu-inicio" href="index.html">Inicio</a>
+            
+            <div id="contenedor-platos" class="dropdown">
+                <a id="menu-platos" href="platos.html">Platos Típicos</a>
+                <div id="submenu-platos" class="dropdown-contenido">
+                    <a id="sub-bandeja" href="platos.html#titulo-bandeja">Bandeja Paisa</a>
+                    <a id="sub-ajiaco" href="platos.html#titulo-ajiaco">Ajiaco</a>
+                    <a id="sub-sancocho" href="platos.html#titulo-sancocho">Sancocho</a>
+                </div>
+            </div>
+            
+            <div id="contenedor-menu" class="dropdown">
+                <a id="menu-regiones" href="regiones.html">Regiones y Sabores</a>
+                <div id="submenu" class="dropdown-contenido">
+                    <a id="sub-andina" href="regiones.html#titulo-andina">Región Andina</a>
+                    <a id="sub-caribe" href="regiones.html#titulo-caribe">Región Caribe</a>
+                    <a id="sub-pacifica" href="regiones.html#titulo-pacifica">Región Pacífica</a>
+                </div>
+            </div>
+
+            <button onclick="cambiarIdioma('es')">ES</button>
+            <button onclick="cambiarIdioma('en')">EN</button>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 id="titulo-regiones">Regiones y Sabores de Colombia</h2>
+            <p id="descripcion-regiones">Colombia cuenta con una gran diversidad gastronómica. Cada región posee ingredientes, tradiciones y preparaciones que reflejan su identidad cultural.</p>
+        </section>
+
+        <section>
+            <h3 id="titulo-andina">Región Andina</h3>
+            <img src="imagenes/region-andina.jpg" alt="Región Andina" width="400">
+            <p id="descripcion-andina">Se caracteriza por platos como la bandeja paisa, el ajiaco y diferentes preparaciones a base de maíz, papa y productos agrícolas de clima frío.</p>
+        </section>
+
+        <section>
+            <h3 id="titulo-caribe">Región Caribe</h3>
+            <img src="imagenes/region-caribe.jpg" alt="Región Caribe" width="400">
+            <p id="descripcion-caribe">Destaca por el uso de pescados, mariscos, coco, yuca y preparaciones tradicionales como la arepa de huevo.</p>
+        </section>
+
+        <section>
+            <h3 id="titulo-pacifica">Región Pacífica</h3>
+            <img src="imagenes/region-pacifica.jpg" alt="Región Pacífica" width="400">
+            <p id="descripcion-pacifica">Su gastronomía se caracteriza por los productos del mar, el plátano, el coco y recetas tradicionales de gran riqueza cultural.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p id="pie-pagina">© 2026 Sabores de Colombia - Proyecto Académico</p>
+    </footer>
+
+    <script src="js/idioma.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+/* =========================================
+   GLOBALES Y RESET
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paleta de Colores de la Bandera de Colombia */
+:root {
+    --amarillo: #FFCD00;
+    --azul: #003087;
+    --rojo: #C8102E;
+    --blanco: #ffffff;
+    --fondo-gris: #f4f7f6;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fondo-gris);
+    color: #333;
+}
+
+/* =========================================
+   HEADER Y MENÚ (FLEXBOX)
+   ========================================= */
+header {
+    background-color: var(--amarillo);
+    color: var(--azul);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 40px;
+    flex-wrap: wrap; 
+    gap: 15px;
+    border-bottom: 6px solid var(--rojo);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+header h1 {
+    color: var(--azul);
+    text-shadow: 1px 1px 0px var(--blanco);
+    font-weight: 800;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    color: var(--azul);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+    background-color: var(--azul); 
+    color: var(--amarillo);
+}
+
+nav button {
+    padding: 8px 14px;
+    border: 2px solid var(--blanco);
+    border-radius: 4px;
+    background-color: var(--rojo);
+    color: var(--blanco);
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: var(--azul);
+    border-color: var(--amarillo);
+}
+
+/* =========================================
+   SUBMENÚS (Desplegables y Teclado)
+   ========================================= */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-contenido {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--azul);
+    min-width: 190px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 10;
+    border-radius: 0 0 5px 5px;
+    flex-direction: column;
+    overflow: hidden;
+    border-bottom: 4px solid var(--rojo);
+}
+
+.dropdown:hover .dropdown-contenido,
+.dropdown:focus-within .dropdown-contenido,
+.dropdown.teclado-activo .dropdown-contenido {
+    display: flex;
+}
+
+.dropdown-contenido a {
+    color: var(--blanco);
+    padding: 12px 16px;
+    border-radius: 0;
+}
+
+.dropdown-contenido a:hover,
+.dropdown-contenido a:focus {
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL Y TARJETAS (FLEXBOX)
+   ========================================= */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   SECCIÓN 1: INTRODUCCIÓN Y SLIDER (Ancho completo)
+   ========================================= */
+main > section:first-of-type {
+    flex: 0 0 100%; 
+    text-align: center;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+main > section:first-of-type h2 {
+    font-size: 2.5rem;
+    color: var(--rojo);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+main > section:first-of-type p {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+/* Estilos específicos para el Slider Principal */
+.slider-contenedor {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    border: 4px solid var(--azul); /* Borde azul para enmarcar la foto */
+}
+
+#imagen-slider {
+    width: 100%;
+    height: 400px; /* Altura correcta para que no se vea aplastada */
+    object-fit: cover; /* Mantiene la proporción sin deformarse */
+    display: block;
+}
+
+.slider-controles {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.slider-controles button {
+    background-color: var(--azul);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.slider-controles button:hover {
+    background-color: var(--rojo);
+}
+
+/* =========================================
+   TARJETAS DE PLATOS/REGIONES (Secciones siguientes)
+   ========================================= */
+section:not(:first-of-type) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    width: 320px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+section:not(:first-of-type):hover {
+    transform: translateY(-8px); 
+    border-color: var(--amarillo);
+    box-shadow: 0 12px 20px rgba(0, 48, 135, 0.25);
+}
+
+section h3 {
+    width: 100%;
+    background-color: var(--azul);
+    color: var(--amarillo);
+    padding: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+    border-bottom: 4px solid var(--rojo);
+}
+
+/* Imágenes solo para las tarjetas pequeñas */
+section:not(:first-of-type) img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+}
+
+section p {
+    padding: 20px;
+    text-align: center;
+    color: #444;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    margin-top: 40px;
+    border-top: 5px solid var(--amarillo);
+}
+
+/* =========================================
+   MEDIA QUERY 768px (Teléfonos y Tablets)
+   ========================================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .dropdown-contenido {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background-color: var(--azul);
+        border-bottom: none;
+    }
+    
+    .dropdown-contenido a {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    #imagen-slider {
+        height: 250px; /* En móvil, la imagen principal se hace un poco más pequeña */
+    }
+
+    section:not(:first-of-type) {
+        width: 100%;
+        max-width: 400px; 
+    }
+}

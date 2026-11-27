@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores de Colombia</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1 id="titulo-principal">Sabores de Colombia</h1>
+        <nav>
+            <a id="menu-inicio" href="index.html">Inicio</a>
+            
+            <!-- Menú desplegable de Platos Típicos -->
+            <div id="contenedor-platos" class="dropdown">
+                <a id="menu-platos" href="platos.html">Platos Típicos</a>
+                <div id="submenu-platos" class="dropdown-contenido">
+                    <a id="sub-bandeja" href="platos.html#titulo-bandeja">Bandeja Paisa</a>
+                    <a id="sub-ajiaco" href="platos.html#titulo-ajiaco">Ajiaco</a>
+                    <a id="sub-sancocho" href="platos.html#titulo-sancocho">Sancocho</a>
+                </div>
+            </div>
+            
+            <!-- Menú desplegable de Regiones -->
+            <div id="contenedor-menu" class="dropdown">
+                <a id="menu-regiones" href="regiones.html">Regiones y Sabores</a>
+                <div id="submenu" class="dropdown-contenido">
+                    <a id="sub-andina" href="regiones.html#titulo-andina">Región Andina</a>
+                    <a id="sub-caribe" href="regiones.html#titulo-caribe">Región Caribe</a>
+                    <a id="sub-pacifica" href="regiones.html#titulo-pacifica">Región Pacífica</a>
+                </div>
+            </div>
+
+            <button onclick="cambiarIdioma('es')">ES</button>
+            <button onclick="cambiarIdioma('en')">EN</button>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 id="titulo-bienvenida">Bienvenido a Sabores de Colombia</h2>
+
+            <!-- Slider de imágenes -->
+            <div class="slider-contenedor">
+                <img id="imagen-slider" src="imagenes/portada.jpg" alt="Platos tradicionales" width="600">
+                <div class="slider-controles">
+                    <button id="btn-anterior" onclick="cambiarImagenManual(-1)">Anterior</button>
+                    <button id="btn-siguiente" onclick="cambiarImagenManual(1)">Siguiente</button>
+                </div>
+            </div>
+
+            <p id="descripcion">
+                Descubre la riqueza gastronómica de Colombia a través de sus platos típicos y de las regiones donde nacen sus sabores más representativos.
+            </p>
+            <br>
+            <a id="boton-platos" href="platos.html" style="background-color: #0033a0; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Conocer Platos Típicos</a>
+        </section>
+    </main>
+
+    <footer>
+        <p id="pie-pagina">© 2026 Sabores de Colombia - Proyecto Académico</p>
+    </footer>
+
+    <!-- Scripts obligatorios -->
+    <script src="js/idioma.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>

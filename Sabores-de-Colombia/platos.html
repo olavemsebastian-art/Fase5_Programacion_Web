@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platos Típicos - Sabores de Colombia</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1 id="titulo-principal">Sabores de Colombia</h1>
+        <nav>
+            <a id="menu-inicio" href="index.html">Inicio</a>
+            
+            <div id="contenedor-platos" class="dropdown">
+                <a id="menu-platos" href="platos.html">Platos Típicos</a>
+                <div id="submenu-platos" class="dropdown-contenido">
+                    <a id="sub-bandeja" href="platos.html#titulo-bandeja">Bandeja Paisa</a>
+                    <a id="sub-ajiaco" href="platos.html#titulo-ajiaco">Ajiaco</a>
+                    <a id="sub-sancocho" href="platos.html#titulo-sancocho">Sancocho</a>
+                </div>
+            </div>
+            
+            <div id="contenedor-menu" class="dropdown">
+                <a id="menu-regiones" href="regiones.html">Regiones y Sabores</a>
+                <div id="submenu" class="dropdown-contenido">
+                    <a id="sub-andina" href="regiones.html#titulo-andina">Región Andina</a>
+                    <a id="sub-caribe" href="regiones.html#titulo-caribe">Región Caribe</a>
+                    <a id="sub-pacifica" href="regiones.html#titulo-pacifica">Región Pacífica</a>
+                </div>
+            </div>
+
+            <button onclick="cambiarIdioma('es')">ES</button>
+            <button onclick="cambiarIdioma('en')">EN</button>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 id="titulo-platos">Platos Típicos de Colombia</h2>
+            <p id="descripcion-platos">La gastronomía colombiana es reconocida por su diversidad de sabores, ingredientes y tradiciones culinarias. A continuación, se presentan algunos de los platos más representativos del país.</p>
+        </section>
+
+        <section>
+            <h3 id="titulo-bandeja">Bandeja Paisa</h3>
+            <img src="imagenes/bandeja - paisa.jpg" alt="Bandeja paisa" width="400">
+            <p id="descripcion-bandeja">Plato típico de Antioquia compuesto por arroz, fríjoles, carne molida, chicharrón, huevo frito, aguacate, arepa y chorizo.</p>
+        </section>
+
+        <section>
+            <h3 id="titulo-ajiaco">Ajiaco</h3>
+            <img src="imagenes/ajiaco.jpg" alt="Ajiaco" width="400">
+            <p id="descripcion-ajiaco">Sopa tradicional de Bogotá preparada con pollo, diferentes tipos de papa, mazorca y guascas.</p>
+        </section>
+
+        <section>
+            <h3 id="titulo-sancocho">Sancocho</h3>
+            <img src="imagenes/sancocho.jpg" alt="Sancocho" width="400">
+            <p id="descripcion-sancocho">Plato tradicional preparado con carne, pollo o pescado, acompañado de yuca, plátano, papa y mazorca.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p id="pie-pagina">© 2026 Sabores de Colombia - Proyecto Académico</p>
+    </footer>
+
+    <script src="js/idioma.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>
